@@ -1,7 +1,7 @@
-export const productList = () => {
-  const fetchData = async () => {
-    const url = "https://fakestoreapi.com/products?limit=20";
 
+
+export const productList = (containerId, templateId) => {
+  const fetchData = async (url) => {
     try {
       const response = await fetch(url);
       if (!response.ok) {
@@ -19,43 +19,37 @@ export const productList = () => {
     return num.toFixed(2);
   };
 
-  const displayData = async () => {
-    const productSection = document.getElementById("product-container");
+  const displayData = async (url) => {
+    const productSection = document.getElementById(containerId);
 
-    const data = await fetchData();
+    const data = await fetchData(url);
     console.log("data from fetch:", data);
 
     data.forEach((product) => {
-      const productListTemplate = document.getElementById(
-        "product-list-template"
-      );
-      const cloneProductListTemplate =
-        productListTemplate.content.cloneNode(true);
+      const template = document.getElementById(templateId);
+      const clone = template.content.cloneNode(true);
 
-      const productImage =
-        cloneProductListTemplate.querySelector(".product-image");
+      const productImage = clone.querySelector(".product-image");
       productImage.setAttribute("src", product.image);
 
-      const productTitle =
-        cloneProductListTemplate.querySelector(".product-title");
+      const productTitle = clone.querySelector(".product-title");
       productTitle.textContent = product.title;
 
-      const productDescription = cloneProductListTemplate.querySelector(
-        ".product-description"
-      );
+      const productDescription = clone.querySelector(".product-description");
       productDescription.textContent = product.description;
 
-      const productPrice =
-        cloneProductListTemplate.querySelector(".product-price");
+      const productPrice = clone.querySelector(".product-price");
 
       const number = product.price;
       const formattedPrice = formatPrice(number);
 
-      productPrice.textContent = `$ ${formattedPrice}`;
+      productPrice.textContent = `$${formattedPrice}`;
 
-      productSection.appendChild(cloneProductListTemplate);
+      productSection.appendChild(clone);
     });
   };
 
-  displayData();
+  return {
+    displayData,
+  };
 };
