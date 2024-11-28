@@ -1,4 +1,7 @@
 import "./styles.css";
-import { greeting } from "./greeting.js";
+import { productList } from "./productList"
 
-console.log(greeting);
+document.addEventListener("DOMContentLoaded", () => {
+  productList()
+  
+    });
