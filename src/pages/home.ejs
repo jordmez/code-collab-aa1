@@ -1,0 +1,13 @@
+<h1>home</h1>
+<a href="#/cart-page">Go to cart</a>
+
+<ul>
+    <% for (let product of products) { %>
+        <li>
+            <a href="#/products/<%= product.id %>">
+                check
+            </a>
+            <%= product.title %>
+        </li>
+    <% } %>
+</ul>
