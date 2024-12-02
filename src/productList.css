@@ -59,6 +59,8 @@ body {
   height: auto;
   background-color: var(--color-lt-gray);
   padding: 15px 10px;
+  word-wrap: break-word;
+
 }
 
 .product-link {
@@ -86,6 +88,7 @@ body {
 .product-title {
   font-size: 1.4rem;
   font-weight: 500;
+  max-width: 100%;
 }
 
 .product-price {
