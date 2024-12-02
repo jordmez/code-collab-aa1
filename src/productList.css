@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --color-lt-gray: #f1f2f2;
+  --color-dk-gray: #54595f;
+  --color-white: #fafafa;
+  --font-main: "Oswald", serif;
+}
+
+body {
+  background-color: var(--color-white);
+  font-family: var(--font-main);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.home-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#page-container {
+  display: grid;
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#product-container {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 320px));
+  gap: 1rem;
+/* grid-template-rows: repeat(min-content); */
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
