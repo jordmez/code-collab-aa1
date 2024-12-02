@@ -1,8 +1,8 @@
 import "./styles.css";
 import { productList } from "./productList";
 import homePage from "./pages/home.ejs";
-import detailsPage from "./pages/productDetails.ejs"
 import cartPage from "./pages/cart.ejs";
+import productPage  from "./pagesJS/productsPage" 
 
 const createProductList = productList(
     "product-container",
@@ -19,14 +19,7 @@ function renderPage(urlPath) {
         document.querySelector("body").innerHTML = cartPage();
 
     } else if (urlPath.startsWith("#/products/")) {
-        let productId = urlPath.substring("#/products/".length)
-
-        fetch('https://fakestoreapi.com/products/' + productId)
-            .then(res => res.json())
-            .then(json => {
-                console.log(json)
-                document.querySelector("body").innerHTML = detailsPage({ product: json });
-            })
+        productPage.render(urlPath);
     } else {
 
         fetch('https://fakestoreapi.com/products')

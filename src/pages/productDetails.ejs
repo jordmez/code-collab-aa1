@@ -1,8 +1,14 @@
-<div>
+
+<section class="product-details-body">
     <a href="/">Home</a>
     <h1>Product</h1>
     <p>
         <%= product.title %>
     </p>
     <img src="<%= product.image %>" alt="">
-</div>
+    <p><%= product.description %></p>
+    <p class="product-details-price"><%= "$" + formatPrice(product.price) %>
+    </p>
+    <button class="add-to-cart-button">Add to cart</button>
+</section>
+
