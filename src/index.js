@@ -19,7 +19,7 @@ function renderPage(urlPath) {
         document.querySelector("body").innerHTML = cartPage();
 
     } else if (urlPath.startsWith("#/products/")) {
-        productPage.render(urlPath);
+        productPage.renderProduct(urlPath);
     } else {
 
         fetch('https://fakestoreapi.com/products')

@@ -1,7 +1,7 @@
 import detailsPage from "../pages/productDetails.ejs";
 import { addProductToShoppingCart } from "./shoppingCartPage";
 
-async function render(urlPath) {
+async function renderProduct(urlPath) {
     let productId = urlPath.substring("#/products/".length)
     let res = await fetch('https://fakestoreapi.com/products/' + productId);
     let json = await res.json();
@@ -13,7 +13,7 @@ async function render(urlPath) {
     buttonAddToShoppingCart();
 }
 
-export default { render }
+export default { renderProduct: renderProduct }
 
 function formatPrice(num) {
     return num.toFixed(2)
