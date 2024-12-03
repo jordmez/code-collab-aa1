@@ -1,4 +1,5 @@
-import detailsPage from "../pages/productDetails.ejs";
+import detailsPage from "../template/product.ejs";
+import partials from "../partials"
 import { addProductToShoppingCart } from "./shoppingCartPage";
 
 async function renderProduct(urlPath) {
@@ -9,6 +10,7 @@ async function renderProduct(urlPath) {
     document.querySelector("body").innerHTML = detailsPage({
         product: json,
         formatPrice: formatPrice,
+        partials
     });
     buttonAddToShoppingCart();
 }
