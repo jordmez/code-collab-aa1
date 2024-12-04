@@ -1,3 +1,4 @@
+import "./productList.css"
 import "./productList.css";
 
 export const productList = (containerId, templateId) => {
