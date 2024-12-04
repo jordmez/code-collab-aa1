@@ -4,6 +4,7 @@ import homePage from "./pages/home.ejs";
 import detailsPage from "./pages/productDetails.ejs"
 import cartPage from "./pages/cart.ejs";
 
+
 const createProductList = productList(
     "product-container",
     "product-list-template"
